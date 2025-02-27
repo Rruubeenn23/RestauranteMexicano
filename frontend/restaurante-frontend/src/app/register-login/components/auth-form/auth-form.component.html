@@ -1,0 +1,50 @@
+
+<!-- HTML actualizado -->
+<div class="auth-container">
+  <!-- Imagen -->
+  <div class="auth-image" [ngClass]="{ 'left': isRegisterMode, 'right': !isRegisterMode }">
+    <img [src]="isRegisterMode ? 'images/register.jpg' : 'images/login.jpg'" alt="Auth Image" />
+  </div>
+
+  <!-- Formulario -->
+  <div class="auth-box" [ngClass]="{ 'left': isRegisterMode, 'right': !isRegisterMode }">
+    <h2>{{ isRegisterMode ? 'Registro' : 'Iniciar Sesión' }}</h2>
+
+    <form (submit)="onSubmit()" class="auth-form">
+      <div class="input-group">
+        <label for="email">📧 Email:</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" required placeholder="Ingresa tu email" />
+      </div>
+
+      <!-- Solo para Registro -->
+      <div *ngIf="isRegisterMode">
+        <div class="input-group">
+          <label for="name">👤 Nombre Completo:</label>
+          <input type="text" id="name" [(ngModel)]="name" name="name" required placeholder="Tu nombre completo" />
+        </div>
+
+        <div class="input-group">
+          <label for="phone">📞 Teléfono:</label>
+          <input type="tel" id="phone" [(ngModel)]="phone" name="phone" required placeholder="Tu número de teléfono" />
+        </div>
+
+        <div class="input-group">
+          <label for="confirm-password">🔑 Confirmar Contraseña:</label>
+          <input type="password" id="confirm-password" [(ngModel)]="confirmPassword" name="confirmPassword" required placeholder="Repite la contraseña" />
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="password">🔒 Contraseña:</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password" required placeholder="Ingresa tu contraseña" />
+      </div>
+
+      <button type="submit" class="btn">{{ isRegisterMode ? 'Registrarse' : 'Ingresar' }}</button>
+    </form>
+
+    <p class="toggle-text">
+      {{ isRegisterMode ? '¿Ya tienes una cuenta?' : '¿No tienes cuenta aún?' }}
+      <a (click)="toggleMode()">{{ isRegisterMode ? 'Iniciar Sesión' : 'Regístrate' }}</a>
+    </p>
+  </div>
+</div>

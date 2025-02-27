@@ -1,0 +1,28 @@
+<!-- Modal HTML -->
+<div class="modal-overlay" *ngIf="isOpen" (click)="close.emit()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="close.emit()">✖</button>
+    <img [src]="item.imagen" [alt]="item.nombre" class="modal-image">
+    <h2 class="modal-title">{{ item.nombre }}</h2>
+    <p class="modal-price">{{ item.precio | currency:'EUR' }}</p>
+    <p *ngIf="item.alergenos.length > 0" class="modal-allergens">
+      <strong>Alérgenos:</strong> {{ getAlergenosText(item.alergenos) }}
+    </p>
+    
+    <div *ngIf="isAdmin" class="admin-actions">
+      <label>Nombre:</label>
+      <input type="text" [(ngModel)]="item.nombre" />
+      <label>Precio:</label>
+      <input type="number" [(ngModel)]="item.precio" />
+      <label>Alergenos:</label>
+      <input type="text" [(ngModel)]="alergenosText" (input)="updateAlergenos()" />
+      
+      
+      <label>Imagen URL:</label>
+      <input type="text" [(ngModel)]="item.imagen" />
+      <button class="edit-button" (click)="saveChanges()">💾 Guardar</button>
+      <button class="delete-button" (click)="deleteItem()">🗑️ Eliminar</button>
+    </div>
+    <button class="cart-button" *ngIf="!isAdmin" (click)="addToCart()">🛒 Añadir al carrito</button>
+  </div>
+</div>

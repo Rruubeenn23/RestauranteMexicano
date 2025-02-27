@@ -1,0 +1,38 @@
+body {
+    background-color: #fff8e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita cualquier margen inesperado */
+}
+
+.container {
+    max-width: 600px;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: none; /* Elimina cualquier sombra adicional */
+    border-radius: 15px;
+    border: 2px solid #d35400;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    position: relative; /* Asegura que no haya desplazamiento extraño */
+}
+
+.container:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    color: #c0392b;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+p {
+    font-size: 18px;
+    color: #2b2b2b;
+    line-height: 1.8;
+}

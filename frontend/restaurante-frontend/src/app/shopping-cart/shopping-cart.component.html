@@ -1,0 +1,32 @@
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
+  <mat-sidenav #sidenav position="end" (keydown.escape)="close('escape')" disableClose>
+    <div class="sidenav-header">
+      <button mat-icon-button (click)="sidenav.close()">
+        <span>X</span>
+      </button>
+    </div>
+    <ul>
+      <li class="sidebar-item" *ngFor="let item of cartItems; let i = index">
+        <img [src]="item.imagen" alt="{{ item.nombre }}" width="50" height="50">
+        <div class="item-details">
+          <span class="item-name">{{ item.nombre }}</span>
+          <span class="item-price">{{ item.precio | currency:'EUR' }}</span>
+          <div class="item-quantity">
+            <button mat-mini-button color="primary" (click)="cartService.decreaseQuantity(i)">-</button>
+            <span>{{ item.cantidad }}</span>
+            <button mat-mini-button color="primary" (click)="cartService.increaseQuantity(i)">+</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="sidebar-total">
+      <button mat-button color="accent" (click)="openAddressDialog()">
+        Pagar: {{ getTotal() | currency:'EUR' }}
+      </button>
+    </div>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,22 @@
+<div class="table-selection-container">
+  <h2>Selecciona tu Mesa</h2>
+  <div class="tables-area">
+    <div
+      *ngFor="let table of tables"
+      class="table"
+      [class.selected]="isSelected(table.id)"
+      [style.left.px]="table.x"
+      [style.top.px]="table.y"
+      (click)="selectTable(table.id)"
+    >
+      <span class="table-id">Mesa {{ table.id }}</span>
+
+      <!-- Mensaje cuando está seleccionada -->
+      <div *ngIf="isSelected(table.id)" class="selected-msg">¡Seleccionada!</div>
+    </div>
+  </div>
+
+  <div *ngIf="!selectedTableId" class="no-selection-msg">
+    No has seleccionado ninguna mesa aún.
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="tabla-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Total</th>
+        <th>Estado</th>
+        <th>Cliente</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of pedidos">
+        <td>{{ pedido.id }}</td>
+        <td>{{ pedido.fecha_hora }}</td>
+        <td>{{ pedido.total }}</td>
+        <td>{{ pedido.estado }}</td>
+        <td>{{ pedido.clienteNombre || 'Desconocido' }}</td>
+        <td>
+          <button class="cancelar-btn" (click)="cancelarPedido(pedido.id)">❌ Cancelar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

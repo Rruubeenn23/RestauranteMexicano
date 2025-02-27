@@ -1,0 +1,30 @@
+<!-- Sección para Administrador: Lista de Reservas -->
+<div *ngIf="isAdmin" class="admin-reservations">
+    <h2 class="text-center text-2xl font-bold">Lista de Reservas</h2>
+    <table class="w-full border-collapse border border-gray-300">
+        <thead>
+            <tr class="bg-orange-300">
+                <th class="border p-2">Nombre</th>
+                <th class="border p-2">Fecha</th>
+                <th class="border p-2">Hora</th>
+                <th class="border p-2">Personas</th>
+                <th class="border p-2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reserva of reservas">
+                <td class="border p-2">{{ reserva.nombre_cliente }}</td>
+                <td class="border p-2">{{ reserva.fecha_hora | date:'yyyy-MM-dd' }}</td>
+                <td class="border p-2">{{ reserva.fecha_hora | date:'HH:mm' }}</td>
+                <td class="border p-2">{{ reserva.personas }}</td>
+
+                <td class="border p-2 text-center">
+                    <button *ngIf="reserva.estado !== 'Cancelada'" (click)="cancelarReserva(reserva.id)"
+                        class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700">
+                        ❌ Cancelar
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

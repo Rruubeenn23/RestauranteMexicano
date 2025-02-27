@@ -1,0 +1,39 @@
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="reservation-form">
+  <h2>Reserva una Mesa</h2>
+
+  <div class="form-group">
+    <label for="mesa">Mesa:</label>
+    <input id="mesa" type="text" formControlName="mesa" required />
+    <div *ngIf="reservationForm.get('mesa')?.invalid && reservationForm.get('mesa')?.touched" class="error">
+      El nombre de la mesa es obligatorio.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="nombre_cliente">Nombre del Cliente:</label>
+    <input id="nombre_cliente" type="text" formControlName="nombre_cliente" required />
+    <div *ngIf="reservationForm.get('nombre_cliente')?.invalid && reservationForm.get('nombre_cliente')?.touched" class="error">
+      El nombre del cliente es obligatorio.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="people">Número de Personas:</label>
+    <input id="people" type="number" formControlName="people" required />
+    <div *ngIf="reservationForm.get('people')?.invalid && reservationForm.get('people')?.touched" class="error">
+      Introduce al menos una persona.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Fecha:</label>
+    <input id="date" type="date" formControlName="date" required />
+  </div>
+
+  <div class="form-group">
+    <label for="time">Hora:</label>
+    <input id="time" type="time" formControlName="time" required />
+  </div>
+
+  <button type="submit" [disabled]="reservationForm.invalid">Confirmar Reserva</button>
+</form>

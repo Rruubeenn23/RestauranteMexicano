@@ -1,0 +1,114 @@
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.category-title {
+    font-size: 1.5em;
+    border-bottom: 2px solid #933;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #933;
+}
+
+/* 🔹 Contenedor principal */
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre filas */
+}
+
+/* 🔹 Cada fila contiene 4 elementos */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espaciado entre columnas */
+    flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
+}
+
+/* 🔹 Tarjetas con tamaño fijo */
+.item-card {
+    width: calc(25% - 25px); /* 4 columnas en una fila con espacio */
+    max-width: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+    background: #FAF3E0;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #E1B07E;
+}
+
+/* 🔹 Ajuste al pasar el cursor */
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.item-card:active {
+    transform: scale(0.95);
+}
+
+/* 🔹 Imagen */
+.item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #E1B07E;
+    flex-shrink: 0;
+}
+
+/* 🔹 Información */
+.item-info {
+    padding: 15px;
+    background: #FAF3E0;
+}
+
+.item-name {
+    font-size: 1.1em;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.item-price {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.item-allergens {
+    font-size: 0.9em;
+    color: #D9534F; /* Rojo para resaltar los alérgenos */
+    margin-top: 5px;
+}
+
+
+/* 🔹 Responsividad */
+@media (max-width: 1024px) {
+    .row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .item-card {
+        width: calc(50% - 25px); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .item-card {
+        width: 100%; /* 1 columna en móviles */
+    }
+}

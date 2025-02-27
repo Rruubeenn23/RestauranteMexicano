@@ -1,0 +1,98 @@
+/* Estilo general de la página */
+body {
+  background-color: #FFCC80; /* Naranja claro */
+  font-family: 'Verdana', sans-serif;
+  color: #5D4037;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa toda la pantalla hasta el footer */
+}
+
+.orders-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: #FFF3E0; /* Fondo beige claro */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border: 3px solid #D84315; /* Borde naranja oscuro */
+  max-height: 50vh; /* Altura máxima para el contenedor */
+  overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+
+.orders-container h2 {
+  font-size: 24px;
+  color: #BF360C;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 3px solid #D84315;
+  padding-bottom: 5px;
+}
+
+.order-card {
+  border: 2px solid #D84315;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 15px 0;
+  background: #FFE0B2; /* Naranja pastel */
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.order-card:hover {
+  transform: scale(1.03);
+  background-color: #FFB74D; /* Naranja más intenso */
+}
+
+.order-header {
+  cursor: pointer;
+  font-weight: bold;
+  color: #E65100;
+  font-size: 18px;
+  border-bottom: 2px dashed #E65100;
+  padding-bottom: 5px;
+}
+
+.order-card p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #5D4037;
+}
+
+.order-card strong {
+  color: #BF360C;
+}
+
+.order-details-container {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 2px solid #D84315;
+  background-color: #FFF8E1;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-details-container h4 {
+  color: #D84315;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.order-details-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-details-container li {
+  background: #FFECB3;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border-left: 4px solid #E65100;
+  font-size: 14px;
+}

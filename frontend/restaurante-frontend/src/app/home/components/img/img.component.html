@@ -1,0 +1,18 @@
+<div class="slider">
+    <div class="slider-container" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+        <div class="slide">
+            <img src="https://media.traveler.es/photos/6137742068a6ada2592a77e0/master/w_1600%2Cc_limit/118529.jpg" alt="Imagen 1">
+        </div>
+        <div class="slide">
+            <img src="https://imagenes.iberoeconomia.es/wp-content/uploads/2018/06/08101129/Comida-mexicana-737x413.jpg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="https://i.pinimg.com/736x/b5/31/2e/b5312ea1cb27d7998e25dbcedfb5f437.jpg" alt="Imagen 3">
+        </div>
+        <div class="slide">
+            <img src="https://i.pinimg.com/736x/46/ee/8a/46ee8af983274847ae812d661a0d05bb.jpg" alt="Imagen 4">
+        </div>
+    </div>
+    <button class="prev" (click)="prevSlide()">&#10094;</button>
+    <button class="next" (click)="nextSlide()">&#10095;</button>
+</div>

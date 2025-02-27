@@ -1,0 +1,13 @@
+<div class="order-details">
+    <h3>Detalles del Pedido #{{ orderId }}</h3>
+    <ul *ngIf="filteredDetails.length > 0; else noDetails">
+      <li *ngFor="let detail of filteredDetails">
+        {{ detail.plato_nombre }} - Cantidad: {{ detail.cantidad }} - Precio: ${{ detail.precio_unitario }} - Total: ${{ detail.total }}
+      </li>
+      
+    </ul>
+    <ng-template #noDetails>
+      <p>No hay detalles disponibles para este pedido.</p>
+    </ng-template>
+  </div>
+  

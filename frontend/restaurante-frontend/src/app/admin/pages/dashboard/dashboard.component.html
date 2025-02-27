@@ -1,0 +1,33 @@
+<div class="admin-container">
+  <h1>🍽️ Panel de Administración</h1>
+
+  <div class="admin-dashboard">
+    <!-- Sección de Pedidos -->
+    <div class="card">
+      <h2>🛒 Pedidos</h2>
+      <p>Revisa y gestiona los pedidos de los clientes.</p>
+      <button class="btn" (click)="navigateTo('/admin/orders')">Ver Pedidos</button>
+    </div>
+
+    <!-- Sección de Reservas -->
+    <div class="card">
+      <h2>📅 Reservas</h2>
+      <p>Administra las reservas de mesas del restaurante.</p>
+      <button class="btn" (click)="navigateTo('/admin/reservations')">Gestionar Reservas</button>
+    </div>
+
+    <!-- Sección de Menú -->
+    <div class="card">
+      <h2>📜 Menú</h2>
+      <p>Edita y actualiza el menú del restaurante.</p>
+      <button class="btn" (click)="navigateTo('/menu')">Administrar Menú</button>
+    </div>
+
+    <!-- Sección de Clientes -->
+    <div class="card">
+      <h2>👥 Clientes</h2>
+      <p>Consulta información sobre los clientes y fidelización.</p>
+      <button class="btn" (click)="navigateTo('/admin/clients')">Ver Clientes</button>
+    </div>
+  </div>
+</div>

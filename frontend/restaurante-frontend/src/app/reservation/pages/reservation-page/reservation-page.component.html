@@ -1,0 +1,19 @@
+<div class="reservation-page-container">
+  <!-- Selector de Mesas a la Izquierda -->
+  <div class="left-section">
+      <app-table-selection (tableSelected)="onTableSelected($event)"></app-table-selection>
+  </div>
+
+  <!-- Formulario a la Derecha -->
+  <div class="right-section">
+      <app-reservation-form (formSubmit)="onFormSubmit($event)"></app-reservation-form>
+
+      <!-- Botón para confirmar la reserva -->
+      <button class="confirm-btn" (click)="showSummary()">Finalizar Reserva</button>
+
+      <!-- Mensaje de error si falta información -->
+      <div *ngIf="showError" class="error-msg">
+          Por favor, completa el formulario y selecciona una mesa.
+      </div>
+  </div>
+</div>

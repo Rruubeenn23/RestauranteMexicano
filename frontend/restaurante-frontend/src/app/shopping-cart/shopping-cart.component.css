@@ -1,0 +1,110 @@
+.example-container {
+  height: 100%;
+  display: flex;
+}
+
+mat-sidenav {
+  width: 300px;
+  background-color: #f8f3e6;
+  color: #2d2d2d;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  border-left: 5px solid #e53935;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.sidenav-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+mat-sidenav-content {
+  flex: 1;
+  padding: 16px;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  padding: 0;
+  cursor: pointer;
+}
+
+mat-sidenav button:hover {
+  color: #e53935;
+}
+
+mat-sidenav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+mat-sidenav li {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+mat-sidenav img {
+  border-radius: 5px;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.item-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.item-price {
+  font-size: 16px;
+  color: #4caf50;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.item-quantity button {
+  font-size: 18px;
+  background-color: #ff7043;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-quantity span {
+  font-size: 16px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.sidebar-total {
+  margin-top: auto;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 0;
+  text-align: center;
+  background-color: #e53935;
+  color: white;
+  border-radius: 5px;
+}

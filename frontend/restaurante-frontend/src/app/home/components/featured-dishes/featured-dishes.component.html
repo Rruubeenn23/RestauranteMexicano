@@ -1,0 +1,18 @@
+<div class="menu-container">
+    <h3 class="category-title">Platos Destacados</h3>
+
+    <div class="grid-container">
+        <div class="row" *ngFor="let row of [0,1]">
+            <div *ngFor="let item of menu[0].items.slice(row * 4, row * 4 + 4)" class="item-card" (click)="openModal(item)">
+                <img [src]="item.imagen" [alt]="item.nombre || 'Imagen del plato'" class="item-image">
+                <div class="item-info">
+                    <h4 class="item-name">{{ item.nombre }}</h4>
+                    <p class="item-price">{{ item.precio | currency:'EUR' }}</p>
+                    <p class="item-allergens">
+                        <strong>Alérgenos:</strong> {{ item.alergenos.join(', ') }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

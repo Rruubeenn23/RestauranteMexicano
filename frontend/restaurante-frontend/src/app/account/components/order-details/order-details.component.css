@@ -1,0 +1,13 @@
+.order-details-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    opacity: 0;
+  }
+  
+  .order-card.open .order-details-container {
+    max-height: 500px;
+    padding: 10px 0;
+    opacity: 1;
+  }
+  

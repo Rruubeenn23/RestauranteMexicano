@@ -1,0 +1,35 @@
+<div class="menu-container">
+    <h2 class="title">Menú</h2>
+
+    <!-- 🔥 Menú de navegación para filtrar categorías -->
+    <div class="menu-nav">
+        <button class="filter-button" [class.active]="categoriaSeleccionada === null" (click)="filtrarMenu(null)">
+            Todos
+        </button>
+        <button *ngFor="let cat of categorias" class="filter-button" [class.active]="cat.id === categoriaSeleccionada"
+            (click)="filtrarMenu(cat.id || null)">
+            {{ cat.nombre }}
+        </button>
+    </div>
+
+    <!-- 🔥 Mostrar platos filtrados -->
+<div *ngIf="menuFiltrado && menuFiltrado.length > 0; else noItems" class="items-container">
+    <button *ngFor="let item of menuFiltrado" class="item-card" (click)="openModal(item)">
+        <img [src]="item.imagen" [alt]="item.nickname" class="item-image">
+        <div class="item-info">
+            <h4 class="item-name">{{ item.nickname }}</h4>
+            <p class="item-price">{{ item.precio | currency:'EUR' }}</p>
+        </div>
+    </button>
+</div>
+
+<!-- 🔥 Mensaje si no hay elementos -->
+<ng-template #noItems>
+    <p class="no-items-message">No hay platos disponibles en esta categoría.</p>
+</ng-template>
+
+
+    <!-- Modal -->
+    <app-modal-items *ngIf="isModalOpen" [item]="selectedItem" [isOpen]="isModalOpen" (close)="closeModal()">
+    </app-modal-items>
+</div>

@@ -1,0 +1,25 @@
+.account-page-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 350px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+  }
+  
+  .account-links {
+    margin-top: 15px;
+  }
+  
+  .account-links a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .account-links a:hover {
+    text-decoration: underline;
+  }
+  

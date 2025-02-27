@@ -1,0 +1,85 @@
+/* Estilo general para la sección de administrador */
+.admin-reservations {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  /* Estilo para el título */
+  .admin-reservations h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #d84315;
+    margin-bottom: 20px;
+    font-family: 'Caveat', cursive;
+  }
+  
+  /* Estilos para la tabla */
+  .admin-reservations table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .admin-reservations th, .admin-reservations td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .admin-reservations th {
+    background-color: #f1f1f1;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .admin-reservations td {
+    font-size: 16px;
+  }
+  
+  .admin-reservations tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .admin-reservations tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .admin-reservations button {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .admin-reservations button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .admin-reservations {
+      padding: 15px;
+      width: 90%;
+    }
+  
+    .admin-reservations table {
+      font-size: 14px;
+    }
+  
+    .admin-reservations th, .admin-reservations td {
+      padding: 8px;
+    }
+  
+    .admin-reservations button {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+  
